@@ -1,0 +1,53 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
+  "schemes" : [
+    {
+      "pointer" : {
+        "speed" : 0.0689655172413792768,
+        "acceleration" : 1.2,
+        "disableAcceleration" : true
+      },
+      "scrolling" : {
+        "reverse" : {
+          "horizontal" : false,
+          "vertical" : true
+        },
+        "distance" : {
+          "vertical" : 3,
+          "horizontal" : 4
+        }
+      },
+      "buttons" : {
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productName" : "Razer DeathAdder V2",
+          "vendorID" : "0x1532",
+          "productID" : "0x84"
+        }
+      }
+    },
+    {
+      "scrolling" : {
+        "speed" : 0,
+        "distance" : "auto",
+        "acceleration" : 1
+      },
+      "pointer" : {
+        "acceleration" : 2,
+        "disableAcceleration" : false,
+        "speed" : 0.0689655172413792768
+      },
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "productID" : "0x342",
+          "vendorID" : "0x5ac"
+        }
+      }
+    }
+  ]
+}
