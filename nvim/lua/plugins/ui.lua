@@ -19,7 +19,7 @@ return {
       "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     keys = {
-      { "<leader>e", ":Neotree toggle<cr>" },
+      { "<leader>t", "<cmd>Neotree toggle<cr>" },
     },
     opts = {
       window = { position = "float" },
@@ -28,8 +28,20 @@ return {
   -- Bufferline
   {
     "akinsho/bufferline.nvim",
+    event = "VeryLazy",
     version = "*",
     dependencies = "nvim-tree/nvim-web-devicons",
+    keys = {
+      { "<leader>bp", "<Cmd>BufferLineTogglePin<cr>" },
+      { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<cr>" },
+      { "<leader>bo", "<Cmd>BufferLineCloseOthers<cr>" },
+      { "<leader>br", "<Cmd>BufferLineCloseRight<cr>" },
+      { "<leader>bl", "<Cmd>BufferLineCloseLeft<cr>" },
+      { "[b",         "<cmd>BufferLineCyclePrev<cr>" },
+      { "]b",         "<cmd>BufferLineCycleNext<cr>" },
+      { "[B",         "<cmd>BufferLineMovePrev<cr>" },
+      { "]B",         "<cmd>BufferLineMoveNext<cr>" },
+    },
     opts = {
       options = {
         diagnostics = "nvim_lsp",

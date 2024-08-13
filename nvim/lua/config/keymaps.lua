@@ -1,5 +1,4 @@
 local map = vim.keymap.set
 
--- Buffers
-map("n", "<leader>p", ":bprevious<cr>")
-map("n", "<leader>n", ":bnext<cr>")
+-- diagnostics
+map("n", "<leader>e", vim.diagnostic.open_float)

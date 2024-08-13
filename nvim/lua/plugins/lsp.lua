@@ -90,16 +90,53 @@ return {
         },
         servers = {
           ["lua_ls"] = { "lua" },
+          ["ruff_lsp"] = { "python" },
         },
       })
 
       require("mason-lspconfig").setup({
-        ensure_installed = {},
+        ensure_installed = {
+          "lua_ls",
+          "pyright",
+          "ruff_lsp",
+          "typos_lsp",
+        },
         handlers = {
           -- this first function is the "default handler"
           -- it applies to every language server without a "custom handler"
           function(server_name)
             require("lspconfig")[server_name].setup({})
+          end,
+
+          lua_ls = function()
+            require("lspconfig").lua_ls.setup({
+              settings = {
+                Lua = {
+                  diagnostics = {
+                    -- get the LSP to recognize the `vim` global
+                    globals = { "vim" },
+                  },
+                },
+              },
+            })
+          end,
+
+          -- use Ruff for linting, formatting, and organizing imports
+          pyright = function()
+            require("lspconfig").pyright.setup({
+              settings = {
+                pyright = {
+                  -- using Ruff's import organizer
+                  disableOrganizeImports = true,
+                },
+                python = {
+                  analysis = {
+                    -- ignore all files for analysis to exclusively use Ruff for linting
+                    ignore = { '*' },
+                  },
+                },
+              },
+            })
           end,
         }
       })

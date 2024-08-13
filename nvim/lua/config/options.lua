@@ -4,6 +4,7 @@ opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus" -- Sync with system clip
 opt.cursorline = true                                   -- Enable highlighting of the current line
 opt.expandtab = true                                    -- Use spaces instead of tabs
 opt.ignorecase = true                                   -- Ignore case
+opt.number = true                                       -- Print line number
 opt.relativenumber = true                               -- Relative line numbers
 opt.scrolloff = 4                                       -- Lines of context
 opt.shiftwidth = 2                                      -- Size of an indent
