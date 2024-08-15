@@ -11,5 +11,5 @@ opt.shiftwidth = 2                                      -- Size of an indent
 opt.sidescrolloff = 8                                   -- Columns of context
 opt.smartcase = true                                    -- Don't ignore case with capitalscontext
 opt.smartindent = true                                  -- Insert indents automatically
-opt.tabstop = 2                                         -- Number of spaces tabs count for
+opt.tabstop = 4                                         -- Number of spaces tabs count for
 opt.termguicolors = true                                -- True color support

@@ -22,7 +22,14 @@ return {
       { "<leader>t", "<cmd>Neotree toggle<cr>" },
     },
     opts = {
-      window = { position = "float" },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
+      window = {
+        position = "float"
+      },
     },
   },
   -- Bufferline
@@ -52,4 +59,12 @@ return {
       require("bufferline").setup(opts)
     end,
   },
+  -- Git signs
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  }
+
 }

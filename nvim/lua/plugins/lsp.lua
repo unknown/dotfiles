@@ -91,11 +91,15 @@ return {
         servers = {
           ["lua_ls"] = { "lua" },
           ["ruff_lsp"] = { "python" },
+          ["biome"] = { "javascript", "typescript", "json" },
+          ["rust_analyzer"] = { "rust" },
+          ["gopls"] = { "go" },
         },
       })
 
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "biome",
           "lua_ls",
           "pyright",
           "ruff_lsp",
