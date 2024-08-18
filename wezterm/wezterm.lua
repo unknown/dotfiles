@@ -1,62 +1,62 @@
-local wezterm = require 'wezterm'
+local wezterm = require "wezterm"
 
 local config = wezterm.config_builder()
 
 config.set_environment_variables = {
-  PATH = '/opt/homebrew/bin:' .. os.getenv('PATH'),
+  PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = 'Tokyo Night'
+config.color_scheme = "Tokyo Night"
 
-config.font = wezterm.font({ family = 'Iosevka Term' })
+config.font = wezterm.font({ family = "Iosevka Term" })
 config.font_size = 15.0
+config.line_height = 1.0
 
 -- window background blur
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
 
 -- removes the title bar
-config.window_decorations = 'RESIZE'
+config.window_decorations = "RESIZE"
 config.window_frame = {
-  font = wezterm.font({ family = 'Inter', weight = 'Bold' }),
+  font = wezterm.font({ family = "Inter", weight = "Medium" }),
   font_size = 12.0,
 }
 
 config.keys = {
   {
-    mods = 'OPT',
-    key = 'LeftArrow',
-    action = wezterm.action.SendKey({ mods = 'ALT', key = 'b' }),
+    mods = "OPT",
+    key = "LeftArrow",
+    action = wezterm.action.SendKey({ mods = "ALT", key = "b" }),
   },
   {
-    mods = 'OPT',
-    key = 'RightArrow',
-    action = wezterm.action.SendKey({ mods = 'ALT', key = 'f' }),
+    mods = "OPT",
+    key = "RightArrow",
+    action = wezterm.action.SendKey({ mods = "ALT", key = "f" }),
   },
   {
-    mods = 'SUPER',
-    key = 'LeftArrow',
-    action = wezterm.action.SendKey({ mods = 'CTRL', key = 'a' }),
+    mods = "SUPER",
+    key = "LeftArrow",
+    action = wezterm.action.SendKey({ mods = "CTRL", key = "a" }),
   },
   {
-    mods = 'SUPER',
-    key = 'RightArrow',
-    action = wezterm.action.SendKey({ mods = 'CTRL', key = 'e' }),
+    mods = "SUPER",
+    key = "RightArrow",
+    action = wezterm.action.SendKey({ mods = "CTRL", key = "e" }),
   },
   {
-    mods = 'SUPER',
-    key = 'Backspace',
-    action = wezterm.action.SendKey({ mods = 'CTRL', key = 'u' }),
+    mods = "SUPER",
+    key = "Backspace",
+    action = wezterm.action.SendKey({ mods = "CTRL", key = "u" }),
   },
   {
-    mods = 'SUPER',
-    key = ',',
+    mods = "SUPER",
+    key = ",",
     action = wezterm.action.SpawnCommandInNewTab {
       cwd = wezterm.home_dir,
-      args = { 'nvim', wezterm.config_file },
+      args = { "nvim", wezterm.config_file },
     },
   },
 }
 
 return config
-
