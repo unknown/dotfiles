@@ -8,16 +8,17 @@ config.set_environment_variables = {
 
 config.color_scheme = "Tokyo Night"
 
-config.font = wezterm.font({ family = "Iosevka Term" })
-config.font_size = 15.0
-config.line_height = 1.0
+config.font = wezterm.font({ family = "Berkeley Mono" })
+config.font_size = 15.2
+config.line_height = 1.1
 
 -- window background blur
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
 
 -- removes the title bar
-config.window_decorations = "RESIZE"
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 config.window_frame = {
   font = wezterm.font({ family = "Inter", weight = "Medium" }),
   font_size = 12.0,
@@ -55,6 +56,7 @@ config.keys = {
     action = wezterm.action.SpawnCommandInNewTab {
       cwd = wezterm.home_dir,
       args = { "nvim", wezterm.config_file },
+      domain = "DefaultDomain",
     },
   },
 }

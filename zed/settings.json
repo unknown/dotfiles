@@ -16,10 +16,12 @@
     "dark": "Kanagawa Wave",
     "mode": "system"
   },
+  "buffer_font_family": "Berkeley Mono",
+  "buffer_font_weight": 500,
   "buffer_font_features": {
     "calt": false
   },
-  "buffer_font_size": 14,
+  "buffer_font_size": 15.2,
   "vim_mode": true,
   "show_wrap_guides": true,
   "wrap_guides": [
