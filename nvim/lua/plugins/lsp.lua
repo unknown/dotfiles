@@ -27,6 +27,7 @@ return {
         },
         sources = {
           { name = "nvim_lsp" },
+          { name = "supermaven" },
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-Space>"] = cmp.mapping.complete(),
