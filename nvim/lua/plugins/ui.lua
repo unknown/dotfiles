@@ -65,6 +65,13 @@ return {
     config = function()
       require("gitsigns").setup()
     end,
-  }
-
+  },
+  -- Vertical rulers
+  {
+    "lukas-reineke/virt-column.nvim",
+    opts = {
+      char = "▕",
+      virtcolumn = "80,120",
+    }
+  },
 }
