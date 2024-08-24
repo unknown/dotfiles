@@ -19,6 +19,7 @@ config.macos_window_background_blur = 30
 -- removes the title bar
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+-- config.window_decorations = "RESIZE"
 config.window_frame = {
   font = wezterm.font({ family = "Inter", weight = "Medium" }),
   font_size = 12.0,
@@ -57,6 +58,14 @@ config.keys = {
       cwd = wezterm.home_dir,
       args = { "nvim", wezterm.config_file },
       domain = "DefaultDomain",
+    },
+  },
+  {
+    mods = "SUPER|SHIFT",
+    key = "<",
+    action = wezterm.action.SpawnCommandInNewTab {
+      cwd = wezterm.home_dir,
+      args = { "nvim", ".config/" },
     },
   },
 }
