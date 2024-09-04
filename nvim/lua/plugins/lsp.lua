@@ -27,7 +27,6 @@ return {
         },
         sources = {
           { name = "nvim_lsp" },
-          { name = "supermaven" },
         },
         mapping = cmp.mapping.preset.insert({
           ["<C-Space>"] = cmp.mapping.complete(),
@@ -93,7 +92,7 @@ return {
         servers = {
           ["lua_ls"] = { "lua" },
           ["ruff_lsp"] = { "python" },
-          ["biome"] = { "javascript", "typescript", "json" },
+          ["biome"] = { "javascript", "typescript", "json", "svelte" },
           ["rust_analyzer"] = { "rust" },
           ["gopls"] = { "go" },
         },
@@ -147,5 +146,10 @@ return {
         }
       })
     end,
-  }
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
 }
