@@ -52,7 +52,6 @@ return {
     opts = {
       options = {
         diagnostics = "nvim_lsp",
-        separator_style = "slant",
       },
     },
     config = function(_, opts)
@@ -73,5 +72,15 @@ return {
       char = "▕",
       virtcolumn = "80,120",
     }
+  },
+  -- lualine
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("lualine").setup()
+    end,
   },
 }
