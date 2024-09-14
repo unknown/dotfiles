@@ -6,10 +6,10 @@ config.set_environment_variables = {
   PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
 }
 
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "kanagawabones"
 
 config.font = wezterm.font({ family = "Berkeley Mono" })
-config.font_size = 15.2
+config.font_size = 15.8
 config.line_height = 1.1
 
 -- window background blur
@@ -24,6 +24,8 @@ config.window_frame = {
   font = wezterm.font({ family = "Inter", weight = "Medium" }),
   font_size = 12.0,
 }
+
+config.window_close_confirmation = "NeverPrompt"
 
 config.keys = {
   {
