@@ -58,13 +58,6 @@ return {
       require("bufferline").setup(opts)
     end,
   },
-  -- Git signs
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end,
-  },
   -- Vertical rulers
   {
     "lukas-reineke/virt-column.nvim",
