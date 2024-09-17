@@ -72,18 +72,24 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    opts = {
-      sections = {
-        lualine_c = {
-          {
-            "filename",
-            path = 1,
+    config = function()
+      require("lualine").setup({
+        options = {
+          -- disable separators
+          component_separators = "",
+          section_separators = "",
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch" },
+          lualine_c = {
+            { "filename", path = 1 },
           },
+          lualine_x = {},
+          lualine_y = { "diff", "diagnostics" },
+          lualine_z = { "location" },
         }
-      }
-    },
-    config = function(_, opts)
-      require("lualine").setup(opts)
+      })
     end,
   },
 }
