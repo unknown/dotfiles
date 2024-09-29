@@ -13,3 +13,40 @@ opt.smartcase = true                                    -- Don't ignore case wit
 opt.smartindent = true                                  -- Insert indents automatically
 opt.tabstop = 4                                         -- Number of spaces tabs count for
 opt.termguicolors = true                                -- True color support
+
+local function is_ssh()
+  return os.getenv("SSH_CONNECTION") ~= nil
+end
+
+if is_ssh() then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = osc52.copy("+"),
+      ["*"] = osc52.copy("*"),
+    },
+    paste = {
+      ["+"] = osc52.paste("+"),
+      ["*"] = osc52.paste("*"),
+    },
+  }
+end
+
+local function is_tmux()
+  return os.getenv("TMUX") ~= nil
+end
+
+if is_tmux() and is_ssh() then
+  vim.g.clipboard = {
+    name = "TmuxClipboard",
+    copy = {
+      ["+"] = "tmux load-buffer -w -",
+      ["*"] = "tmux load-buffer -w -",
+    },
+    paste = {
+      ["+"] = "tmux save-buffer -",
+      ["*"] = "tmux save-buffer -",
+    },
+  }
+end
