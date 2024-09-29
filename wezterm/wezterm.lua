@@ -2,11 +2,9 @@ local wezterm = require "wezterm"
 
 local config = wezterm.config_builder()
 
-config.set_environment_variables = {
-  PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
-}
-
 config.color_scheme = "kanagawabones"
+
+config.front_end = "WebGpu"
 
 config.font = wezterm.font({ family = "Berkeley Mono" })
 config.font_size = 15.8
