@@ -2,6 +2,10 @@ local wezterm = require "wezterm"
 
 local config = wezterm.config_builder()
 
+config.set_environment_variables = {
+  PATH = "/opt/homebrew/bin:" .. os.getenv("PATH"),
+}
+
 config.color_scheme = "kanagawabones"
 
 config.front_end = "WebGpu"
