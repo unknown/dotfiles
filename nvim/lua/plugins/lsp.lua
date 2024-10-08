@@ -13,34 +13,22 @@ return {
 
   -- Autocompletion
   {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      { "L3MON4D3/LuaSnip" },
+    "saghen/blink.cmp",
+    lazy = false, -- lazy loading handled internally
+    dependencies = "rafamadriz/friendly-snippets",
+    version = "v0.*",
+    opts = {
+      keymap = {
+        accept = "<CR>",
+      },
+      highlight = {
+        use_nvim_cmp_as_default = true,
+      },
+      nerd_font_variant = "mono",
+      -- experimental features
+      accept = { auto_brackets = { enabled = true } },
+      trigger = { signature_help = { enabled = true } },
     },
-    config = function()
-      local cmp = require("cmp")
-
-      cmp.setup({
-        completion = {
-          completeopt = "menu,menuone,noinsert",
-        },
-        sources = {
-          { name = "nvim_lsp" },
-        },
-        mapping = cmp.mapping.preset.insert({
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-d>"] = cmp.mapping.scroll_docs(4),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        }),
-        snippet = {
-          expand = function(args)
-            vim.snippet.expand(args.body)
-          end,
-        },
-      })
-    end,
   },
 
   -- LSP
@@ -49,7 +37,6 @@ return {
     cmd = { "LspInfo", "LspInstall", "LspStart" },
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-      { "hrsh7th/cmp-nvim-lsp" },
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
     },
@@ -80,7 +67,6 @@ return {
       lsp_zero.extend_lspconfig({
         sign_text = true,
         lsp_attach = lsp_attach,
-        capabilities = require("cmp_nvim_lsp").default_capabilities()
       })
 
       -- `format_on_save` should run only once, before the language servers are active.
