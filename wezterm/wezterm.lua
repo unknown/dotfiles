@@ -10,9 +10,12 @@ config.color_scheme = "kanagawabones"
 
 config.front_end = "WebGpu"
 
-config.font = wezterm.font({ family = "Berkeley Mono" })
-config.font_size = 15.8
-config.line_height = 1.1
+config.font = wezterm.font({
+  family = "Berkeley Mono",
+  weight = "Regular",
+})
+config.font_size = 15.4
+config.line_height = 1.2
 
 -- window background blur
 config.window_background_opacity = 0.9
