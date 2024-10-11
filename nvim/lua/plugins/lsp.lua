@@ -11,6 +11,13 @@ return {
     config = true,
   },
 
+  -- Pairs
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+  },
+
   -- Autocompletion
   {
     "saghen/blink.cmp",
@@ -26,7 +33,6 @@ return {
       },
       nerd_font_variant = "mono",
       -- experimental features
-      accept = { auto_brackets = { enabled = true } },
       trigger = { signature_help = { enabled = true } },
     },
   },

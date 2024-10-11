@@ -4,3 +4,5 @@ local map = vim.keymap.set
 map("n", "<leader>e", vim.diagnostic.open_float)
 map("n", "]g", vim.diagnostic.goto_next)
 map("n", "[g", vim.diagnostic.goto_prev)
+
+map("n", "<leader>w", "<cmd>set wrap!<cr>")
