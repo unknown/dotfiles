@@ -25,9 +25,7 @@ return {
     dependencies = "rafamadriz/friendly-snippets",
     version = "v0.*",
     opts = {
-      keymap = {
-        accept = "<CR>",
-      },
+      keymap = "super-tab",
       highlight = {
         use_nvim_cmp_as_default = true,
       },
