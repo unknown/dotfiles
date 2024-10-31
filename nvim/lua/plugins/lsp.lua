@@ -25,7 +25,31 @@ return {
     dependencies = "rafamadriz/friendly-snippets",
     version = "v0.*",
     opts = {
-      keymap = "super-tab",
+      keymap = {
+        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-e>"] = { "hide" },
+
+        ["<Cr>"] = {
+          function(cmp)
+            if cmp.is_in_snippet() then
+              return cmp.accept()
+            else
+              return cmp.select_and_accept()
+            end
+          end,
+          "snippet_forward",
+          "fallback"
+        },
+        ["<S-Tab>"] = { "snippet_backward", "fallback" },
+
+        ["<Up>"] = { "select_prev", "fallback" },
+        ["<Down>"] = { "select_next", "fallback" },
+        ["<C-p>"] = { "select_prev", "fallback" },
+        ["<C-n>"] = { "select_next", "fallback" },
+
+        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
+      },
       highlight = {
         use_nvim_cmp_as_default = true,
       },
@@ -127,7 +151,7 @@ return {
                 python = {
                   analysis = {
                     -- ignore all files for analysis to exclusively use Ruff for linting
-                    ignore = { '*' },
+                    ignore = { "*" },
                   },
                 },
               },
