@@ -22,40 +22,24 @@ return {
   {
     "saghen/blink.cmp",
     lazy = false, -- lazy loading handled internally
-    dependencies = "rafamadriz/friendly-snippets",
-    version = "v0.*",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      {
+        "saghen/blink.compat",
+        optional = true, -- make optional so it's only enabled if any extras need it
+        opts = {},
+        version = "*",
+      },
+    },
+    version = "*",
     opts = {
-      keymap = {
-        ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-        ["<C-e>"] = { "hide" },
-
-        ["<Cr>"] = {
-          function(cmp)
-            if cmp.is_in_snippet() then
-              return cmp.accept()
-            else
-              return cmp.select_and_accept()
-            end
-          end,
-          "snippet_forward",
-          "fallback"
-        },
-        ["<S-Tab>"] = { "snippet_backward", "fallback" },
-
-        ["<Up>"] = { "select_prev", "fallback" },
-        ["<Down>"] = { "select_next", "fallback" },
-        ["<C-p>"] = { "select_prev", "fallback" },
-        ["<C-n>"] = { "select_next", "fallback" },
-
-        ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-        ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-      },
-      highlight = {
+      keymap = { preset = "enter" },
+      appearance = {
         use_nvim_cmp_as_default = true,
+        nerd_font_variant = "mono",
       },
-      nerd_font_variant = "mono",
-      -- experimental features
-      trigger = { signature_help = { enabled = true } },
+      -- experimental signature help support
+      signature = { enabled = true }
     },
   },
 
@@ -105,10 +89,11 @@ return {
         },
         servers = {
           ["lua_ls"] = { "lua" },
-          ["ruff_lsp"] = { "python" },
+          ["ruff"] = { "python" },
           ["biome"] = { "javascript", "typescript", "json", "svelte" },
           ["rust_analyzer"] = { "rust" },
           ["gopls"] = { "go" },
+          ["elixirls"] = { "elixir" },
         },
       })
 
@@ -117,7 +102,7 @@ return {
           "biome",
           "lua_ls",
           "pyright",
-          "ruff_lsp",
+          "ruff",
           "typos_lsp",
         },
         handlers = {
