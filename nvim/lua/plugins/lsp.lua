@@ -38,9 +38,13 @@ return {
         use_nvim_cmp_as_default = true,
         nerd_font_variant = "mono",
       },
+      completion = {
+        menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end },
+      },
       -- experimental signature help support
       signature = { enabled = true }
     },
+    opts_extend = { "sources.default" },
   },
 
   -- LSP
@@ -51,11 +55,21 @@ return {
     dependencies = {
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
+      { "saghen/blink.cmp" },
     },
     opts = {
       autoformat = true,
     },
     config = function()
+      -- Add blink.cmp capabilities settings to lspconfig
+      -- This should be executed before you configure any language server
+      local lspconfig_defaults = require('lspconfig').util.default_config
+      lspconfig_defaults.capabilities = vim.tbl_deep_extend(
+        'force',
+        lspconfig_defaults.capabilities,
+        require('blink.cmp').get_lsp_capabilities()
+      )
+
       local lsp_zero = require("lsp-zero")
 
       -- lsp_attach is where you enable features that only work
@@ -94,6 +108,8 @@ return {
           ["rust_analyzer"] = { "rust" },
           ["gopls"] = { "go" },
           ["elixirls"] = { "elixir" },
+          ["ocamllsp"] = { "ocaml" },
+          ["taplo"] = { "toml" },
         },
       })
 
@@ -121,6 +137,14 @@ return {
                     globals = { "vim" },
                   },
                 },
+              },
+            })
+          end,
+
+          typos_lsp = function()
+            require("lspconfig").typos_lsp.setup({
+              init_options = {
+                diagnosticSeverity = "Hint",
               },
             })
           end,
