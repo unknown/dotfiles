@@ -104,7 +104,7 @@ return {
         servers = {
           ["lua_ls"] = { "lua" },
           ["ruff"] = { "python" },
-          ["biome"] = { "javascript", "typescript", "json", "svelte" },
+          ["biome"] = { "javascript", "typescript", "json", "svelte", "javascriptreact", "typescriptreact" },
           ["rust_analyzer"] = { "rust" },
           ["gopls"] = { "go" },
           ["elixirls"] = { "elixir" },
@@ -161,6 +161,18 @@ return {
                   analysis = {
                     -- ignore all files for analysis to exclusively use Ruff for linting
                     ignore = { "*" },
+                  },
+                },
+              },
+            })
+          end,
+
+          rust_analyzer = function()
+            require("lspconfig").rust_analyzer.setup({
+              settings = {
+                ["rust-analyzer"] = {
+                  checkOnSave = {
+                    command = "clippy",
                   },
                 },
               },
