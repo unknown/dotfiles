@@ -3,8 +3,6 @@
     "context": "Editor",
     "bindings": {
       "cmd-shift-r": "editor::RestartLanguageServer",
-      "[ b": "pane::ActivatePrevItem",
-      "] b": "pane::ActivateNextItem"
     }
   }
 ]
