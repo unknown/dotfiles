@@ -5,19 +5,17 @@ font-size = 14
 adjust-cell-height = 15%
 window-inherit-font-size = false
 
-keybind = ctrl+plus=increase_font_size:1
-keybind = ctrl+equal=increase_font_size:1
-keybind = ctrl+minus=decrease_font_size:1
-keybind = ctrl+zero=reset_font_size
-
-keybind = cmd+right=text:\x05
-keybind = cmd+left=text:\x01
-keybind = alt+left=esc:b
-keybind = alt+right=esc:f
-
 window-padding-x = 2
 window-padding-y = 2
 window-save-state = always
 
 macos-titlebar-style = transparent
 macos-icon = glass
+macos-non-native-fullscreen = true
+
+background-opacity = 0.85
+background-blur-radius = 15
+
+confirm-close-surface = false
+
+copy-on-select = clipboard
