@@ -17,6 +17,10 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
+# bun
+set -gx PATH $PATH /Users/dmo/.bun/bin
+# bun end
+
 # astral
 uv generate-shell-completion fish | source
 uvx --generate-shell-completion fish | source
@@ -28,8 +32,12 @@ set -gx PATH $PATH (go env GOPATH)/bin
 
 # mpl
 set -gx PATH $PATH /dev/mpl-switch
-set -gx PATH $PATH ~/.mpl/bin
+set -gx PATH $PATH $HOME/.mpl/bin
 # mpl end
+
+# rust
+set -gx PATH $HOME/.cargo/bin $PATH
+# rust end
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.

@@ -110,6 +110,7 @@ return {
           ["elixirls"] = { "elixir" },
           ["ocamllsp"] = { "ocaml" },
           ["taplo"] = { "toml" },
+          ["zls"] = { "zig" },
         },
       })
 

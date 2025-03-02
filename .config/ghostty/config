@@ -14,7 +14,7 @@ macos-icon = glass
 macos-non-native-fullscreen = true
 
 background-opacity = 0.85
-background-blur-radius = 15
+background-blur-radius = 50
 
 confirm-close-surface = false
 
