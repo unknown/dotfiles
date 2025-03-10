@@ -17,13 +17,14 @@ add_newline = false
 
 palette = "tailwind"
 
+# Tailwind 4.0 color palette
 [palettes.tailwind]
-teal500 = "#14b8a6"
-teal900 = "#134e4a"
+teal600 = "#009689" # oklch(0.6 0.118 184.704)
+teal950 = "#022f2e" # oklch(0.277 0.046 192.524)
 
-pink300 = "#fda5d5"
+pink300 = "#fda5d5" # oklch(0.823 0.12 346.018)
 
-zinc800 = "#27272a"
+zinc800 = "#27272a" # oklch(0.274 0.006 286.033)
 
 [character]
 success_symbol = "[](bold purple)"
@@ -32,19 +33,19 @@ vimcmd_symbol = "[](bold green)"
 
 [directory]
 format = """
-[](teal500)\
-[󰉋](bg:teal500 fg:teal900)\
-[](fg:teal500 bg:zinc800)\
-[ $path](bg:zinc800 bold)\
+[](teal600)\
+[󰉋](bg:teal600 fg:teal950)\
+[ ](fg:teal600 bg:zinc800)\
+[$path](bg:zinc800 bold)\
 [ ](zinc800)"""
 truncate_to_repo = false
 
 [git_branch]
 format = """
-[](teal500)\
-[ ](bg:teal500 fg:teal900)\
-[](fg:teal500 bg:zinc800)\
-[ $branch](bg:zinc800 bold)"""
+[](teal600)\
+[ ](bg:teal600 fg:teal950)\
+[ ](fg:teal600 bg:zinc800)\
+[$branch](bg:zinc800 bold)"""
 
 [git_status]
 format = """
