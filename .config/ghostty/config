@@ -5,16 +5,18 @@ font-size = 14
 adjust-cell-height = 15%
 window-inherit-font-size = false
 
-window-padding-x = 2
-window-padding-y = 2
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
 window-save-state = always
 
 macos-titlebar-style = transparent
 macos-icon = glass
 macos-non-native-fullscreen = true
 
-background-opacity = 0.85
-background-blur-radius = 50
+background-opacity = 0.8
+background-blur-radius = 100
 
 confirm-close-surface = false
 
