@@ -2,15 +2,21 @@
 "$schema" = "https://starship.rs/config-schema.json"
 
 format = """
+[](fg:zinc800)\
+$os\
 $username\
-$hostname\
+[](fg:zinc800 bg:zinc300)\
 $directory\
+[](fg:zinc300 bg:zinc100)\
 $git_branch\
 $git_status\
+[](fg:zinc100 bg:zinc700)\
+$rust\
+[](fg:zinc700 bg:zinc800)\
+$cmd_duration\
+[](fg:zinc800)\
 $line_break\
 $character"""
-
-right_format = """$cmd_duration"""
 
 # Disable the blank line at the start of the prompt
 add_newline = false
@@ -19,38 +25,53 @@ palette = "tailwind"
 
 # Tailwind 4.0 color palette
 [palettes.tailwind]
-teal600 = "#009689" # oklch(0.6 0.118 184.704)
-teal950 = "#022f2e" # oklch(0.277 0.046 192.524)
+white = "#ffffff"
 
-pink300 = "#fda5d5" # oklch(0.823 0.12 346.018)
+pink500 = "#ec4899"
 
-zinc800 = "#27272a" # oklch(0.274 0.006 286.033)
+zinc100 = "#f4f4f5"
+zinc300 = "#d4d4d8"
+zinc600 = "#525252"
+zinc700 = "#3f3f46"
+zinc800 = "#27272a"
+zinc900 = "#18181b"
 
 [character]
-success_symbol = "[](bold purple)"
-error_symbol = "[](bold red)"
-vimcmd_symbol = "[](bold green)"
+success_symbol = "[❯](bold zinc100)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold green)"
+
+[os]
+disabled = false
+format = "[$symbol]($style)"
+style = "bg:zinc800 fg:zinc300"
+
+[os.symbols]
+Ubuntu = "󰕈 " 
+Linux = " "
+Macos = " "
+Windows = " "
+
+[username]
+show_always = true
+format = "[$user ]($style)"
+style_user = "bg:zinc800 fg:zinc300"
+style_root = "bg:zinc800 fg:zinc300"
 
 [directory]
-format = """
-[](teal600)\
-[󰉋](bg:teal600 fg:teal950)\
-[ ](fg:teal600 bg:zinc800)\
-[$path](bg:zinc800 bold)\
-[ ](zinc800)"""
+format = "[ $path ]($style)"
+style = "bg:zinc300 fg:zinc900"
 truncate_to_repo = false
+truncation_symbol = "…/"
 
 [git_branch]
-format = """
-[](teal600)\
-[ ](bg:teal600 fg:teal950)\
-[ ](fg:teal600 bg:zinc800)\
-[$branch](bg:zinc800 bold)"""
+symbol = " "
+format = "[ $symbol$branch]($style)"
+style = "bg:zinc100 fg:zinc900"
 
 [git_status]
-format = """
-[(*$conflicted$untracked$modified$staged$renamed$deleted)](bg:zinc800 fg:pink300)\
-[ ](zinc800)"""
+format = "[(*$conflicted$untracked$modified$staged$renamed$deleted) ]($style)"
+style = "bg:zinc100 fg:pink500"
 conflicted = "​"
 untracked = "​"
 modified = "​"
@@ -58,6 +79,12 @@ staged = "​"
 renamed = "​"
 deleted = "​"
 
+[rust]
+symbol = ""
+format = "[ $symbol ($version) ]($style)"
+style = "bg:zinc700 fg:zinc300"
+
 [cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
+min_time = 0
+format = "[ 󰔛 $duration]($style)"
+style = "bg:zinc800 fg:zinc300"
