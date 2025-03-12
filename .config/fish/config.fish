@@ -6,6 +6,8 @@ abbr vim "nvim"
 abbr lg "lazygit"
 set -gx EDITOR nvim
 
+set -gx XDG_CONFIG_HOME $HOME/.config
+
 # brew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # brew end

@@ -1,0 +1,5 @@
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    syntax-theme = kanagawa
