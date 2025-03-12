@@ -10,8 +10,10 @@ $directory\
 [](fg:zinc300 bg:zinc100)\
 $git_branch\
 $git_status\
+$git_metrics\
 [](fg:zinc100 bg:zinc700)\
 $rust\
+$nodejs\
 [](fg:zinc700 bg:zinc800)\
 $cmd_duration\
 [](fg:zinc800)\
@@ -26,6 +28,10 @@ palette = "tailwind"
 # Tailwind 4.0 color palette
 [palettes.tailwind]
 white = "#ffffff"
+
+red600 = "#dc2626"
+
+lime700 = "#4d7c0f"
 
 pink500 = "#ec4899"
 
@@ -47,16 +53,16 @@ format = "[$symbol]($style)"
 style = "bg:zinc800 fg:zinc300"
 
 [os.symbols]
-Ubuntu = "󰕈 " 
-Linux = " "
-Macos = " "
-Windows = " "
+Ubuntu = "󰕈"
+Linux = ""
+Macos = ""
+Windows = ""
 
 [username]
 show_always = true
-format = "[$user ]($style)"
-style_user = "bg:zinc800 fg:zinc300"
-style_root = "bg:zinc800 fg:zinc300"
+format = "[ $user ]($style)"
+style_user = "bg:zinc800 fg:zinc100"
+style_root = "bg:zinc800 fg:zinc100"
 
 [directory]
 format = "[ $path ]($style)"
@@ -65,8 +71,8 @@ truncate_to_repo = false
 truncation_symbol = "…/"
 
 [git_branch]
-symbol = " "
-format = "[ $symbol$branch]($style)"
+symbol = ""
+format = "[ $symbol $branch]($style)"
 style = "bg:zinc100 fg:zinc900"
 
 [git_status]
@@ -79,8 +85,19 @@ staged = "​"
 renamed = "​"
 deleted = "​"
 
+[git_metrics]
+disabled = false
+format = "([+$added ]($added_style))([-$deleted ]($deleted_style))"
+added_style = "bg:zinc100 fg:lime700"
+deleted_style = "bg:zinc100 fg:red600"
+
 [rust]
 symbol = ""
+format = "[ $symbol ($version) ]($style)"
+style = "bg:zinc700 fg:zinc300"
+
+[nodejs]
+symbol = ""
 format = "[ $symbol ($version) ]($style)"
 style = "bg:zinc700 fg:zinc300"
 
