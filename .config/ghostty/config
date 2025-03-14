@@ -9,15 +9,21 @@ window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 
-window-save-state = always
-
+background-opacity = 0.95
+background-blur-radius = 100
 macos-titlebar-style = transparent
 macos-icon = glass
 macos-non-native-fullscreen = true
 
-background-opacity = 0.95
-background-blur-radius = 100
-
-confirm-close-surface = false
-
 copy-on-select = clipboard
+window-save-state = always
+
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+
+keybind = ctrl+space>h=new_split:left
+keybind = ctrl+space>j=new_split:down
+keybind = ctrl+space>k=new_split:up
+keybind = ctrl+space>l=new_split:right
