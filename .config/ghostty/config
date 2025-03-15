@@ -3,7 +3,6 @@ theme = kanagawabones
 font-family = Berkeley Mono
 font-size = 14
 adjust-cell-height = 15%
-window-inherit-font-size = false
 
 window-padding-x = 10
 window-padding-y = 10
@@ -13,17 +12,21 @@ background-opacity = 0.95
 background-blur-radius = 100
 macos-titlebar-style = transparent
 macos-icon = glass
-macos-non-native-fullscreen = true
+
+keybind = ctrl+space>h=goto_split:left
+keybind = ctrl+space>j=goto_split:bottom
+keybind = ctrl+space>k=goto_split:top
+keybind = ctrl+space>l=goto_split:right
+
+keybind = ctrl+space>shift+h=resize_split:left,50
+keybind = ctrl+space>shift+j=resize_split:down,50
+keybind = ctrl+space>shift+k=resize_split:up,50
+keybind = ctrl+space>shift+l=resize_split:right,50
+
+keybind = ctrl+space>shift+5=new_split:right
+keybind = ctrl+space>shift+'=new_split:down
+keybind = ctrl+space>space=equalize_splits
 
 copy-on-select = clipboard
 window-save-state = always
-
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:bottom
-keybind = ctrl+k=goto_split:top
-keybind = ctrl+l=goto_split:right
-
-keybind = ctrl+space>h=new_split:left
-keybind = ctrl+space>j=new_split:down
-keybind = ctrl+space>k=new_split:up
-keybind = ctrl+space>l=new_split:right
+mouse-hide-while-typing = true
