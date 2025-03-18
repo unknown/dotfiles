@@ -111,8 +111,12 @@ return {
           ["ocamllsp"] = { "ocaml" },
           ["taplo"] = { "toml" },
           ["zls"] = { "zig" },
+          ["gleam"] = { "gleam" },
         },
       })
+
+      -- The Gleam language server is not packaged in Mason
+      require("lspconfig").gleam.setup({})
 
       require("mason-lspconfig").setup({
         ensure_installed = {

@@ -13,6 +13,8 @@ background-blur-radius = 100
 macos-titlebar-style = transparent
 macos-icon = glass
 
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
 keybind = ctrl+space>h=goto_split:left
 keybind = ctrl+space>j=goto_split:bottom
 keybind = ctrl+space>k=goto_split:top
