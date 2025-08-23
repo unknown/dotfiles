@@ -116,7 +116,9 @@ return {
       })
 
       -- The Gleam language server is not packaged in Mason
-      require("lspconfig").gleam.setup({})
+      require("lspconfig").gleam.setup({
+        cmd = { "/Users/dmo/dev/cs480_ossd/gleam/target/debug/gleam", "lsp" },
+      })
 
       require("mason-lspconfig").setup({
         ensure_installed = {

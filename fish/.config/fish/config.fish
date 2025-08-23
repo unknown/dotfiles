@@ -4,6 +4,7 @@ end
 
 abbr vim "nvim"
 abbr lg "lazygit"
+abbr oc "opencode"
 set -gx EDITOR nvim
 
 set -gx XDG_CONFIG_HOME $HOME/.config

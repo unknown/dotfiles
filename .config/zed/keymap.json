@@ -1,8 +1,0 @@
-[
-  {
-    "context": "Editor",
-    "bindings": {
-      "cmd-shift-r": "editor::RestartLanguageServer",
-    }
-  }
-]
