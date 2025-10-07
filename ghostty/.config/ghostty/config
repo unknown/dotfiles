@@ -1,6 +1,3 @@
-auto-update = off
-auto-update-channel = tip
-
 theme = kanagawabones
 font-family = Berkeley Mono
 font-size = 14
