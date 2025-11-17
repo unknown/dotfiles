@@ -13,7 +13,7 @@ $git_status\
 $git_metrics\
 [](fg:zinc100 bg:zinc700)\
 $rust\
-$nodejs\
+$bun\
 [](fg:zinc700 bg:zinc800)\
 $cmd_duration\
 [](fg:zinc800)\
@@ -92,13 +92,15 @@ added_style = "bg:zinc100 fg:lime700"
 deleted_style = "bg:zinc100 fg:red600"
 
 [rust]
-symbol = ""
+symbol = "rs"
 format = "[ $symbol ($version) ]($style)"
 style = "bg:zinc700 fg:zinc300"
 
-[nodejs]
-symbol = ""
+[bun]
+symbol = "bun"
 format = "[ $symbol ($version) ]($style)"
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts"]
+detect_folders = ["node_modules"]
 style = "bg:zinc700 fg:zinc300"
 
 [cmd_duration]
